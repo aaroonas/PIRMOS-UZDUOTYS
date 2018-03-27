@@ -1,7 +1,66 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-<title>CSS Intro</title>
-<style type="text/css"></style>
 
+<head>
+    <title>Kvadratai(nr4)</title>
+    <style>
+        body {
+            width: 6vmin;
+            height: 6vmin;
+        }
+
+        .container {
+            width: 100vw;
+            height: 62.5vw;
+            background-color: cadetblue;
+            margin-bottom: 5vw;
+            text-align: left;
+        }
+
+        .rectangle {
+            background-color: darkmagenta;
+            height: 25vw;
+            width: 75vw;
+            margin-bottom: 5vw;
+        }
+
+        .strocked {
+            border: 5px solid black;
+            background-color: yellow;
+        }
+
+        .rectangle.strocked {
+            border: none;
+        }
+
+
+        .block {
+            background-color: blue;
+            height: 25vw;
+            width: 25vw;
+            margin-bottom: 1vw;
+        }
+
+        div.rectangle>div:nth-last-child(1) {
+            background-color: red
+        }
+
+        .block:hover {
+            background: url(https://cdn.europosters.eu/image/1300/badges/cars-lightning-mcqueen-i4567.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+    <div class="block strocked"></div>
+    <div class="rectangle">
+        <div class="block"></div>
+    </div>
+    <div class="rectangle strocked"></div>
+</body>
+
+</html>
