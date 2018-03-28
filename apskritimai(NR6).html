@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pavadinimas</title>
+</head>
+<style>
+#cred, #cgreen, #cblue { 
+    height: calc(50vw * 0.6);
+    width: calc(50vw * 0.6);
+    box-sizing: border-box;
+    border: calc(50vw * 0.6 * 0.03) solid black;
+    border-radius: 50%;
+    position:absolute;
+    text-align: center;
+    
+    vertical-align: middle;
+ }
+ #cred {
+     background-color: rgba(255, 0, 0, 0.24);
+     border-color: red;
+     left: 20%;
+}
+#cgreen {
+    background-color: rgba(0, 128, 0, 0.24);
+    border-color: green;
+    top: 20vw;
+    left: 20%;
+    }
+#cblue {
+    background-color: rgba(0, 0, 255, 0.24);
+    border-color: blue;
+    top: 20vw;
+}
+
+#kvadratas { height: 50vw;
+width: 50vw;
+background-color: grey;
+border-color: black;
+position: relative;
+padding: 0vw;
+
+margin-top: calc(50vw * 0.6 * 0.5);
+
+margin-left: calc(50vw * 0.6 * 0.5);
+
+}
+</style>
+<body>
+
+<div id="tekstas">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+<div id="kvadratas">
+    <div id="cred">R</div>
+    <div id="cgreen">G</div>
+    <div id="cblue">B</div>
+</div>
+
+</body>
+</html>
