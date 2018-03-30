@@ -5,129 +5,94 @@
     <title>Layout(NR5)</title>
     <style>
         body {
-            margin: 4px;
-            padding: 0px;
-        }
-        footer{ height: 1em;
-        font-size: 20px;
+            margin: 0px;
+            padding: 0%;
+            font-size: 100px;
+            }
+        
+            
+        
+        #I {
         width: 100vw;
-        background-color: darkturquoise
+        background-color:lightgreen;
         }
-        #I { height: 1em;
-        font-size: 20px;
-        width: 100vw;
-        background-color:lightgreen;}
-        #vidurys {display: inline-block;
-        width:100%;}
-        #centras{ display:inline-block;}
+
+       
 
        
         #A {
             background-color: green;
-            height: 1em;
+            height: 100%;
             width: 75%;
-            font-size: 20px;
-            margin: 0px;
-            float: left;
-        }
+           float: left;
+           box-sizing: border-box;
+           }
 
         #B {
-            display: inline-block;
+            float: right;
             background-color: rgb(255, 0, 21);
             width: 25%;
-            height: 1em;
-            font-size: 20px;
-            margin: 0px;
-            
-        
-        }
+            height: 100%;
+            }
 
         #C {
-            height:500px;
+            height:100vh;
             width: 25%;
             background-color: yellow;
-            margin: 0px;
-            font-size: 20px;
             float: left;
         }
 
-        #D {
-            height:1em ;
-            width: 50vw;
-            background-color: darkslateblue;
-            margin: 0px;
-            font-size:20px;
-        }
-
-        #E {
+        #D, #E, #I, #header { 
+            box-sizing: border-box;
             height: 1em;
-            width: 50vw;
-            background-color: darkslateblue;
-            margin: 0px;
-            font-size: 20px;
-            
-        }
+            }
 
         #I {
-            height: 1em;
-            width: 100vw;
+            width: 100%;
             background-color: darkturquoise;
-            font-size: 20px;
-            margin: 0px;
-        }
+            }
 
         #F {
             height: 2em;
             width: 25%;
-            background-color: lightsalmon;
-            font-size: 20px;
             margin: 0px;
+            float: left;
 
-        }
+            }
 
-        #H {height: 100vh;
+        #H {height: 100%;
             width: 25%;
-            background-color: lightsalmon;
-            margin: 0px;
-            font-size: 20px;
-            margin: 0px;
-        }
-
-        #vidurys {
-            margin: 0px;
-            display: inline-block;
-            height: 100%;
-        }
+            }
 
         #G {
-            width: 50vw;
-            height: calc(100vh);
-            background-color: rgb(61, 123, 139);
+            height: 100%;
+            }
+        #centras{
+            height: 100%;
+            width: 50%;
+            float: left;
+            background-color: darkslateblue;
             
-        }
-        #C {display: inline-block;
-        }
-        #centras{display: inline-block;}
-        #sonas
-        #vidurys{height:calc(100% - 20em);
+            
+            }
+        #sonas {
+            width: 25%;
+            height: 100%;
+            background-color: lightsalmon;
+            float: left;
+            }
+        #vidurys{height: 100vh;
+        width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <div id=class"header"><div id="A">A</div><div id="B">B</div></div>
-    <div id="vidurys">
-        <div id="C">C</div>
-        <div id="centras">
-            <div id="D">D</div>
-            <div id="E">E</div>
-            <div id="G">G</div>
-        </div>
-        <div id="sonas">
-            <div class="F">F</div>
-            <div class="H">H</div>
-        </div>
-        </div>
+    <div id="header"><div id="A">A</div><div id="B">B</div></div>
+    <div id="vidurys"><div id="C">C</div>
+    <div id="centras"><div id="D">D</div><div id="E">E</div><div id="G">G</div></div>
+    <div id="sonas"><div class="F">F</div><div class="H">H</div></div>
+</div>
     <div id="I">I</div>
 
 </body>
