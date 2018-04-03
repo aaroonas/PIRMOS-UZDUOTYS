@@ -9,15 +9,9 @@
             position: static;
         }
 
-        #board {
-            height: 800px;
-            width: 800px;
-            text-align: center;
-            border: 1px solid rgba(240, 181, 21, 0.521);
-            margin: 100px;
-        }
+       
 
-        div.dark {
+        .dark {
             background-color: #994c00;
             vertical-align: middle;
             float: left;
@@ -26,22 +20,24 @@
             font-size: 60px;
         }
 
-        div.light {
+        .light {
             font-size: 60px;
             float: left;
             height: 100px;
             width: 100px;
-            background-color: #ffffff
+            background-color: white;
         }
 
         #board-side {
             width: 1000px;
             height: 1000px;
             border: 1px solid black;
-            background-color: rgba(52, 212, 100, 0.24)
+            background-color: rgba(52, 212, 100, 0.24);
+            margin-left: 400;
+            text-align: center;
         }
 
-        #board-side div.raide {
+        .raide {
             width: 100px;
             height: 100px;
             float: left;
@@ -50,7 +46,7 @@
             font-size: 60px;
         }
 
-        div.raidedown {
+        .raidedown {
             transform: rotate(180deg);
             width: 100px;
             height: 100px;
@@ -60,12 +56,12 @@
             font-size: 60px;
         }
 
-        #board-side div.raide.kaire {
+        .raide.kaire {
             float: right;
             transform: rotate(180deg)
         }
 
-        div.desine {
+        .desine {
             clear: both;
         }
     </style>
@@ -84,110 +80,104 @@
         <div class="raide">H</div>
         <div class="raide"></div>
         <div class="raide desine">8</div>
+        <!--row1-->
+        <div class="light">&#9820;</div>
+        <div class="dark">&#9822;</div>
+        <div class="light">&#9821;</div>
+        <div class="dark">&#9819;</div>
+        <div class="light">&#9818;</div>
+        <div class="dark">&#9821;</div>
+        <div class="light">&#9822;</div>
+        <div class="dark">&#9820;</div>
         <div class="raide kaire">8</div>
         <div class="raide desine">7</div>
+        <!--row2-->
+        <div class="dark">&#9823;</div>
+        <div class="light">&#9823;</div>
+        <div class="dark">&#9823;</div>
+        <div class="light">&#9823;</div>
+        <div class="dark">&#9823;</div>
+        <div class="light">&#9823;</div>
+        <div class="dark">&#9823;</div>
+        <div class="light">&#9823;</div>
         <div class="raide kaire">7</div>
         <div class="raide desine">6</div>
+        <!--row3-->
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
         <div class="raide kaire">6</div>
         <div class="raide desine">5</div>
+        <!--row4-->
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
         <div class="raide kaire">5</div>
         <div class="raide desine">4</div>
+        <!--row5-->
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
         <div class="raide kaire">4</div>
         <div class="raide desine">3</div>
+        <!--row6-->
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="dark"></div>
+        <div class="light"></div>
         <div class="raide kaire">3</div>
         <div class="raide desine">2</div>
+        <!--row7-->
+        <div class="light">&#9817;</div>
+        <div class="dark">&#9817;</div>
+        <div class="light">&#9817;</div>
+        <div class="dark">&#9817;</div>
+        <div class="light">&#9817;</div>
+        <div class="dark">&#9817;</div>
+        <div class="light">&#9817;</div>
+        <div class="dark">&#9817;</div>
         <div class="raide kaire">2</div>
         <div class="raide desine">1</div>
+        <!--row8-->
+        <div class="dark">&#9814;</div>
+        <div class="light">&#9816;</div>
+        <div class="dark">&#9815;</div>
+        <div class="light">&#9813;</div>
+        <div class="dark">&#9812;</div>
+        <div class="light">&#9815;</div>
+        <div class="dark">&#9816;</div>
+        <div class="light">&#9814;</div>
         <div class="raide kaire">1</div>
         <div class="raide desine"></div>
+        <!--row bottom letters-->
+        <div class="raidedown">A</div>
+        <div class="raidedown">B</div>
+        <div class="raidedown">C</div>
+        <div class="raidedown">D</div>
+        <div class="raidedown">E</div>
+        <div class="raidedown">F</div>
+        <div class="raidedown">G</div>
+        <div class="raidedown">H</div>
 
-        <div id="board">
-            
-                <!--row1-->
-
-                <div class="light">&#9820;</div>
-                <div class="dark">&#9822;</div>
-                <div class="light">&#9821;</div>
-                <div class="dark">&#9819;</div>
-                <div class="light">&#9818;</div>
-                <div class="dark">&#9821;</div>
-                <div class="light">&#9822;</div>
-                <div class="dark">&#9820;</div>
-                <!--row2-->
-                <div class="dark">&#9823;</div>
-                <div class="light">&#9823;</div>
-                <div class="dark">&#9823;</div>
-                <div class="light">&#9823;</div>
-                <div class="dark">&#9823;</div>
-                <div class="light">&#9823;</div>
-                <div class="dark">&#9823;</div>
-                <div class="light">&#9823;</div>
-                <!--row3-->
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <!--row4-->
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <!--row5-->
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <!--row6-->
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <div class="dark"></div>
-                <div class="light"></div>
-                <!--row7-->
-                <div class="light">&#9817;</div>
-                <div class="dark">&#9817;</div>
-                <div class="light">&#9817;</div>
-                <div class="dark">&#9817;</div>
-                <div class="light">&#9817;</div>
-                <div class="dark">&#9817;</div>
-                <div class="light">&#9817;</div>
-                <div class="dark">&#9817;</div>
-                <!--row8-->
-                <div class="dark">&#9814;</div>
-                <div class="light">&#9816;</div>
-                <div class="dark">&#9815;</div>
-                <div class="light">&#9813;</div>
-                <div class="dark">&#9812;</div>
-                <div class="light">&#9815;</div>
-                <div class="dark">&#9816;</div>
-                <div class="light">&#9814;</div>
-                <!--row bottom letters-->
-                <div class="raidedown">A</div>
-                <div class="raidedown">B</div>
-                <div class="raidedown">C</div>
-                <div class="raidedown">D</div>
-                <div class="raidedown">E</div>
-                <div class="raidedown">F</div>
-                <div class="raidedown">G</div>
-                <div class="raidedown">H</div>
-
-            </div>
-        </div>
     </div>
 
 
