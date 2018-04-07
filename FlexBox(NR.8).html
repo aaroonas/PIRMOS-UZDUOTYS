@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FlexBox(NR.8)</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .flexcontainer {
+      font-size: 100px;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .A {
+      background-color: green;
+    }
+
+    .B {
+      background-color: rgb(255, 0, 21);
+      margin-left: 5px;
+    }
+
+    #C {
+
+      background-color: yellow;
+      margin-right: 5px;
+      
+    }
+
+    .D {
+      height: 1em;
+      background-color: darkslateblue;
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+
+
+    .F {
+      height: calc(2em + 5px);
+      background-color: lightsalmon;
+      margin-bottom: 5px;
+    }
+
+    .G {
+      background-color: darkslateblue;
+      height: calc(100% - 2em - 10px);
+      margin-bottom: 5px;
+      margin-right: 5px;
+      
+    }
+
+    .H {
+      background-color: lightsalmon;
+      height: calc(100% - 2em - 10px);
+     
+    }
+
+    #I {
+      height: 1em;
+      background-color: darkturquoise;
+      margin-top: 5px;
+    }
+
+    ;
+    #centras {
+      margin-right: 5px;
+      background-color: darkslateblue;
+    }
+
+    #header {
+      display: flex;
+      margin-bottom: 5px;
+    }
+
+    #vidurys {
+      display: flex;
+      height: 100%;
+    }
+
+    #header div:nth-of-type(1) {
+      flex-grow: 3;
+    }
+
+    #header div:nth-of-type(2) {
+      flex-grow: 1;
+    }
+
+    #vidurys div:nth-of-type(1) {
+      flex-grow: 1;
+    }
+
+    #vidurys div:nth-of-type(2) {
+      flex-grow: 2;
+    }
+
+    #vidurys div:nth-of-type(3) {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flexcontainer">
+    <div id="header">
+      <div class="A">A</div>
+      <div class="B">B</div>
+    </div>
+    <div id="vidurys">
+      <div id="C">C</div>
+      <div id="centras">
+        <div class="D">D</div>
+        <div class="D">E</div>
+        <div class="G">G</div>
+      </div>
+      <div id="sonas">
+        <div class="F">F</div>
+        <div class="H">H</div>
+      </div>
+    </div>
+    <div id="I">I</div>
+  </div>
+
+</body>
+
+</html>
