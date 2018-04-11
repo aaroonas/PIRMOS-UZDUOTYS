@@ -4,13 +4,12 @@
 <head>
     <meta http-equiv="refresh" content="2">
     <meta charset="UTF-8">
-    <title>Media query uzduotis</title>
+    <title>Media query užduotis</title>
     <style>
         body {
             margin: 0;
             background-color: rgb(243, 243, 112);
             height: 100vh;
-
         }
 
         li {
@@ -26,7 +25,6 @@
             height: 55vh;
             font-size: 20px;
             overflow: auto;
-
         }
 
         #kontaktai {
@@ -36,7 +34,7 @@
             padding: 20px;
             vertical-align: middle;
             color: white;
-            font-size:20px;
+            font-size: 20px;
         }
 
         #menu {
@@ -47,9 +45,6 @@
             margin: 5px;
             color: white;
             font-size: 20px;
-            
-            
-
         }
 
         .reklama {
@@ -59,20 +54,16 @@
             border: 1px solid;
             flex: 0 0 280px;
             margin: 5px;
-            color: white
+            color: white;
         }
 
         #addblock {
             display: flex;
             flex: row;
             flex-wrap: wrap;
-           align-content: top;
+            align-content: top;
             padding: 0 5px;
-            justify-content:center;
-
-           
-
-
+            justify-content: center;
         }
 
         .keitimui {
@@ -82,26 +73,27 @@
 
         ul {
             padding: 0;
-            display:flex;
-        
-            
-            
+            display: flex;
         }
-
-        
 
         .fill {
             flex-grow: 1;
         }
-        ul > li:nth-child(2) {visibility: hidden}
-        ul > li:nth-child(3) {visibility: hidden}
+
+        ul>li:nth-child(2) {
+            visibility: hidden;
+        }
+
+        ul>li:nth-child(3) {
+            visibility: hidden;
+        }
 
 
         @media (min-width: 767px) {
             #addblock {
                 flex: 0 0;
                 align-content: flex-start;
-                
+
             }
             .kontaktai {
                 flex: 0 0;
@@ -116,13 +108,18 @@
                 flex-direction: row;
 
             }
-            ul > li:nth-child(2) {visibility: visible}
-            ul > li:nth-child(3) {visibility: visible}
-            .reklama { flex: 0 0 220px }
-            #tekstas {height: 80vh}
-
-            
-           
+            ul>li:nth-child(2) {
+                visibility: visible
+            }
+            ul>li:nth-child(3) {
+                visibility: visible
+            }
+            .reklama {
+                flex: 0 0 220px
+            }
+            #tekstas {
+                height: 80vh
+            }
         }
     </style>
 
