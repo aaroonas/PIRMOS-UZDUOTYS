@@ -2,40 +2,53 @@
 <html>
 
 <head>
+    <meta http-equiv="refresh" content="2">
     <meta charset="UTF-8">
     <title>Media query uzduotis</title>
     <style>
         body {
             margin: 0;
             background-color: rgb(243, 243, 112);
-            height: 100%;
+            height: 100vh;
 
         }
-        li {list-style-type: none;}
+
+        li {
+            list-style-type: none;
+            padding-right: 20px;
+        }
 
 
 
-        #article {
+        #tekstas {
             background-color: lightgreen;
-            margin: 5px 5px 5px 5px;
-            height: 50%;
+            margin: 5px 5px;
+            height: 60vh;
+            font-size: 20px;
+            overflow: auto;
+
         }
 
         #kontaktai {
-            background-color:blue;
+            background-color: blue;
             text-align: center;
             margin: 5px 5px 5px 5px;
             padding: 20px;
             vertical-align: middle;
+            color: white;
+            font-size:20px;
         }
 
-        #a {
-            display: column;
+        #menu {
             flex-direction: row;
             align-items: center;
             background-color: rgb(92, 92, 243);
             padding: 20px;
-            margin: 5px 5px 5px 5px;
+            margin: 5px;
+            color: white;
+            font-size: 20px;
+            
+            
 
         }
 
@@ -44,56 +57,106 @@
             width: 200px;
             height: 100px;
             border: 1px solid;
-            flex: 0 0 200px;
-            margin: 10px;
+            flex: 0 0 220px;
+            margin: 5px;
+            color: white
         }
 
-        #b {
+        #addblock {
             display: flex;
             flex: row;
             flex-wrap: wrap;
-            justify-content: space-evenly;
-            padding: 0 10px;
+           align-content: top;
+            padding: 0 5px;
+            justify-content:space-evenly;
+           
+
+
+        }
+
+        .keitimui {
+            display: flex;
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 0;
+            display:flex;
+        
+            
             
         }
 
-        ul {padding: 0;
-            display: flex;
-            align-items: center;
-            }
-        .fill { flex-grow: 1;}
-
-        [class*="reklama"] {
-    width: 100%;
-}
-@media only screen and {
-    
-}
         
+
+        .fill {
+            flex-grow: 1;
+        }
+        ul > li:nth-child(2) {visibility: hidden}
+        ul > li:nth-child(3) {visibility: hidden}
+
+
+        @media (min-width: 767px) {
+            #addblock {
+                flex: 0 0;
+                align-content: flex-start;
+                
+            }
+            .kontaktai {
+                flex: 0 0;
+            }
+            .tekstas {
+                flex-grow: 1;
+                overflow: auto;
+            }
+            .keitimui {
+                overflow: auto;
+                flex: 1 1;
+                flex-direction: row;
+
+            }
+            ul > li:nth-child(2) {visibility: visible}
+            ul > li:nth-child(3) {visibility: visible}
             
+           
+        }
     </style>
 
     <body>
-        <div id="a">
+        <div id="menu">
             <ul>
                 <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
                 <li class="fill"></li>
                 <li>menu4</li>
             </ul>
         </div>
-        <div id="article">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-            ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
-            ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
-        <div id="b">
-            <div class="reklama">reklama 1</div>
-            <div class="reklama">reklama 2</div>
-            <div class="reklama">reklama 3</div>
-            <div class="reklama">reklama 4</div>
+
+        <div class="keitimui">
+            <div id="tekstas">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+                qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"menu4 Sed
+                ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+                qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
+                ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+
+            <div id="addblock">
+                <div class="reklama">reklama 1</div>
+                <div class="reklama">reklama 2</div>
+                <div class="reklama">reklama 3</div>
+                <div class="reklama">reklama 4</div>
+            </div>
         </div>
         <div id="kontaktai">kontaktai</div>
 
