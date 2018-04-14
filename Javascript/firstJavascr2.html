@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pirmas JS </title>
+    <title>Pirmas JS.. </title>
 <style>
     #show, #show2, p, b{
         font-size:50px;}
@@ -15,34 +15,34 @@
     
 </head>
 <body>
-    <b>Javascript funkciju patikrinimas</b>
-    <p>Perimetras yra 
-    <span Id = "show"></span>cm</p>
-    <p>įstrižainė yra 
-            <span class= "show2"></span>cm</p>
+    <b>Javascript funkcijų patikrinimas</b>
+    <p id="show"></p>
 
     <script>
      
-        var ilgis = 100;
-        alert('kintamojo "ilgis" reikšmė yra ' + ilgis);
         var plotis = 30;
         var aukštis = 90;
         var perimetras = plotis * 2 + aukštis * 2;
         alert('kintamojo "perimetras" reikšmė ' + perimetras);
+       
         var pošaknis = plotis * plotis + aukštis * aukštis;
-        alert('kintamojo "pošaknis" reikšmė ' + pošaknis);//kodel nepaejo 'posaknis' vietoj fomules?
+      
         var plotas = plotis * aukštis;
         alert('kintamojo "plotas" reikšmė ' + plotas);
-        var įstrižainė = Math.sqrt((plotis * plotis) + (aukštis * aukštis));
+        
+        var įstrižainė = Math.sqrt((plotis * plotis) + (aukštis * aukštis)); //kodel nepaejo 'posaknis' ?
         alert('kintamojo "įstrižainė" reikšmė ' + įstrižainė);
-        var parametrai = [ perimetras, plotas, įstrižainė ]
-
-        perimetras = myFunction ( 30, 90 );
-        document.getElementById("show").innerHTML = perimetras;
-        function myFunction( plotis, aukštis ) {
-            return plotis * 2 + aukštis * 2;
-        }
        
+        var parametrai = ['kai stačiakampio plotis:' + ' ' + plotis, 'ir aukštis:' + ' ' + aukštis, 'tai perimetras yra' + ' ' + perimetras, 'plotas yra' + ' ' + plotas, 'įstrižainė yra' + ' ' + įstrižainė];        //zodis + tarpas + reiksme
+        var i = 0;
+        var noc = parametrai.length; // Number Of Characters; 
+        var text = ' ';
+
+        for (i, noc, text; i < noc; i++) {
+        text += parametrai[i] + '<p>';} //<p> kad mestu stulpeliu
+        document.getElementById("show").innerHTML = text;
+
+      
         
 </script>
 </body>
