@@ -8,14 +8,14 @@
 <style>
     #show, #show2, p, b{
         font-size:50px;}
-    #show, #show2 {color: red;}
+    #show, #show2, span {color: red;}
      
     
 </style>    
     
 </head>
 <body>
-    <b>Javascript funkcijų patikrinimas</b>
+    <b>Javascript funkcijų patikrinimas (paspauskit <span>F12</span>)</b>
     <p id="show"></p>
 
     <script>
@@ -23,23 +23,24 @@
         var plotis = 30;
         var aukštis = 90;
         var perimetras = plotis * 2 + aukštis * 2;
+        console.log('kintamojo "perimetras" reikšmė ' + perimetras);
         alert('kintamojo "perimetras" reikšmė ' + perimetras);
        
         var pošaknis = plotis * plotis + aukštis * aukštis;
       
         var plotas = plotis * aukštis;
-        alert('kintamojo "plotas" reikšmė ' + plotas);
+        console.log('kintamojo "plotas" reikšmė ' + plotas);
+        alert('kintamojo "plotas" reikšmė ' + plotas)
         
-        var įstrižainė = Math.sqrt((plotis * plotis) + (aukštis * aukštis)); //kodel nepaejo 'posaknis' ?
+        var įstrižainė = Math.sqrt((plotis * plotis) + (aukštis * aukštis)); //kodel nepaejo 'pošaknis' ?
+        console.log('kintamojo "įstrižainė" reikšmė ' + įstrižainė);
         alert('kintamojo "įstrižainė" reikšmė ' + įstrižainė);
        
         var parametrai = ['kai stačiakampio plotis:' + ' ' + plotis, 'ir aukštis:' + ' ' + aukštis, 'tai perimetras yra' + ' ' + perimetras, 'plotas yra' + ' ' + plotas, 'įstrižainė yra' + ' ' + įstrižainė];        //zodis + tarpas + reiksme
-        var i = 0;
-        var noc = parametrai.length; // Number Of Characters; 
         var text = ' ';
-
-        for (i, noc, text; i < noc; i++) {
-        text += parametrai[i] + '<p>';} //<p> kad mestu stulpeliu
+        var i;
+        for (i = 0, text; i < parametrai.length; i++) {  //loops through a block of code a number of times
+        text += parametrai[i] + '<p>';} //<p> kad mestu stulpeliu; galima naudoti <br>
         document.getElementById("show").innerHTML = text;
 
       
