@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>trikampiai(pratimas 13)</title>    
     <script>
-        var a = 100; var b = 120; var c = 180; var p = (a + b + c) / 2; var S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        var a = 6; var b = 7; var c = 6; var p = (a + b + c) / 2; var S = Math.sqrt(p * (p - a) * (p - b) * (p - c));//krastines, pusperimetris, ploto formule
         if  (a + b <= c || b + c <= a || a + c <= b) {
             document.write('trikampis neiseina')  
-        } else if (a == b && b == c && c == a) { document.write('trikampis lygiakrastis' + ' ' + S ); 
-        } else if (a == b || b == c || c == a) { document.write('trikampis lygiasonis' + ' ' + S)
-        } else if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == b * b + a * a ) { document.write('trikampis statusis' + ' ' + S) 
-        } else if (a != b && b != c && c != a) { document.write('trikampis ivairiakrastis' + ' ' + S)
+        } else if (a == b && b == c && c == a) { document.write('trikampis lygiakrastis' + ', ' + 'plotas' + ' ' + S ) 
+        } else if (a == b || b == c || c == a) { document.write('trikampis lygiasonis' + ', ' + 'plotas' + ' ' +  S)
+        } else if (a * a == b * b + c * c || b * b == a * a + c * c || c * c == b * b + a * a ) { document.write('trikampis statusis' + ', ' + 'plotas' + ' ' + S) 
+        } else if (a != b && b != c && c != a) { document.write('trikampis ivairiakrastis' + ', ' + 'plotas' + ' ' + S)
         }
          
     </script>
