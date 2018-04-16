@@ -19,7 +19,7 @@
     <p>Perimetras yra 
     <span Id = "show"></span>cm</p>
     <p>įstrižainė yra 
-            <span class= "show2"></span>cm</p>
+            <span id= "show2"></span>cm</p>
 
     <script>
      
@@ -33,15 +33,16 @@
         alert('kintamojo "pošaknis" reikšmė ' + pošaknis);//kodel nepaejo 'posaknis' vietoj fomules?
         var plotas = plotis * aukštis;
         alert('kintamojo "plotas" reikšmė ' + plotas);
-        var įstrižainė = Math.sqrt((plotis * plotis) + (aukštis * aukštis));
-        alert('kintamojo "įstrižainė" reikšmė ' + įstrižainė);
-        var parametrai = [ perimetras, plotas, įstrižainė ]
+        var s = Math.sqrt((plotis * plotis) + (aukštis * aukštis));
+        alert('kintamojo "įstrižainė" reikšmė ' + s);
+        var parametrai = [ perimetras, plotas, s ]
 
         perimetras = myFunction ( 30, 90 );
         document.getElementById("show").innerHTML = perimetras;
         function myFunction( plotis, aukštis ) {
             return plotis * 2 + aukštis * 2;
         }
+        document.getElementById("show2").innerHTML = s;
        
         
 </script>
