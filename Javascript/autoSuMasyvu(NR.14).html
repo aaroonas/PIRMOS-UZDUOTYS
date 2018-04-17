@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto su masyvu</title>    
+    <script>
+        var masina = [
+            [2015, 'LRS123', 500, 420],
+            [2016, 'ABC123', 280, 210],
+            [2017, 'EZZ571', 400, 360],
+            [2018, 'JHB687', 130, 100]
+        ]
+        var greitis = (masina[i][2] * 3.6) / masina[i][3] ;
+        var data = masina[i][0];
+        var nr = masina[i][1];
+        var kelias = masina[i][2];
+        var laikas = masina[i][3];
+
+        var i;
+        for( i = 0; i < masina.length; i++ ) {
+            text += masina[i];
+            }
+        
+        document.querySelector("tbody > tr > td") = text;
+        
+       
+    </script>
+</head>
+<body>
+    
+    <table>
+        <thead>
+        <tr>
+        <td>Data</td>
+        <td>Valst.Nr</td>
+        <td>Kelias</td>
+        <td>Laikas</td>
+        <td>Greitis</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    
+    </table>
+</body>
+</html>
