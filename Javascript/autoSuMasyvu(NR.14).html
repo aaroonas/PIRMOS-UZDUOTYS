@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Auto su masyvu</title>    
-    <script>
-        var masina = [
-            [2015, 'LRS123', 500, 420],
-            [2016, 'ABC123', 280, 210],
-            [2017, 'EZZ571', 400, 360],
-            [2018, 'JHB687', 130, 100]
-        ]
-        var greitis = (masina[i][2] * 3.6) / masina[i][3] ;
-        var data = masina[i][0];
-        var nr = masina[i][1];
-        var kelias = masina[i][2];
-        var laikas = masina[i][3];
+    <title>Auto su masyvu</title>
+    <style>
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em
+        }
 
-        var i;
-        for( i = 0; i < masina.length; i++ ) {
-            text += masina[i];
-            }
-        
-        document.querySelector("tbody > tr > td") = text;
-        
-       
-    </script>
+        table {
+            height: 20vh;
+            width: 80vw;
+            margin: auto;
+            border: 3px solid black;
+        }
+
+        thead tr td {
+            font-weight: bold;
+            background-color: rgb(185, 50, 50);
+            color: white;
+        }
+    </style>
+
+    
+    
 </head>
 <body>
     
@@ -47,10 +49,41 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            
         </tr>
     </tbody>
     
     </table>
+    <script>
+        var masina = [
+            [2015, 'LRS123', 5000, 420],
+            [2016, 'ABC123', 2805, 210],
+            [2017, 'EZZ571', 4000, 360],
+            [2018, 'JHB687', 1345, 100]
+        ]
+        var greitis = (masina[i][2] * 3.6) / masina[i][3] ;//greicio ciklas?
+        var data = masina[i][0];
+        var nr = masina[i][1];
+        var kelias = masina[i][2];
+        var laikas = masina[i][3];
+        
+
+        var i;
+        var j;
+        masina = masina.push( greitis );
+
+        for( i = 0; i < masina.length;  i++ ) {
+
+            
+            document.querySelector("tbody > tr").innerHTML = '<td>' + masina[i] + '<td>';//kaip apsirasyt greiti(ar ipusint i masyva)?
+            
+        }
+            
+        
+        
+        
+        
+       
+    </script>
 </body>
 </html>
