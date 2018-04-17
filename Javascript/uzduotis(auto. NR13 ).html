@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Auto uzdotis (NR.13)</title>
     <style>
-        
         td {
             border: 1px solid black;
             text-align: center;
             padding: 20px;
             font-size: 2em
         }
-        table { 
+
+        table {
             height: 20vh;
             width: 80vw;
             margin: auto;
             border: 3px solid black;
         }
-        thead > tr { font-weight: 1000; }
-    </style>    
-    
+
+        thead>tr {
+            font-weight: 1000;
+        }
+    </style>
+
 </head>
+
 <body>
-        <table>
-                <thead>
-                <tr>
+    <table>
+        <thead>
+            <tr>
                 <td>Data</td>
                 <td>Valst.Nr</td>
                 <td>Kelias(m)</td>
                 <td>Laikas(s)</td>
                 <td>Greitis(km/h)</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id='data'></td>
-                    <td id= 'nr'></td>
-                    <td id= 'kelias'></td>
-                    <td id= 'laikas'></td>
-                    <td id= 'greitis'></td>
-                    
-                </tr>
-            </tbody>
-            
-            </table>
-       
-        
-    
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id='data'></td>
+                <td id='nr'></td>
+                <td id='kelias'></td>
+                <td id='laikas'></td>
+                <td id='greitis'></td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+
+
     <script>
-            var data = '2018-09' ;
-            var nr = 'LRS123';
-            var kelias = 24;
-            var laikas = 1 ;
-            var greitis = (kelias * 3.6) / laikas;
-           
-            
-            
-            document.getElementById('data').innerHTML = data;
-            document.getElementById('nr').innerHTML = nr;
-            document.getElementById('kelias').innerHTML = kelias;
-            document.getElementById('laikas').innerHTML = laikas;
-            document.getElementById('greitis').innerHTML = greitis.toFixed(0);//string toFixed(sk nurodo kelinta sk apvalinti)
-            
-    
-    
-            
-        </script>
+        var data = '2018-09';
+        var nr = 'LRS123';
+        var kelias = 24;
+        var laikas = 1;
+        var greitis = (kelias * 3.6) / laikas;
+
+
+
+        document.getElementById('data').innerHTML = data;
+        document.getElementById('nr').innerHTML = nr;
+        document.getElementById('kelias').innerHTML = kelias;
+        document.getElementById('laikas').innerHTML = laikas;
+        document.getElementById('greitis').innerHTML = greitis.toFixed(0);//string toFixed(sk nurodo kelinta sk apvalinti)
+
+
+
+
+    </script>
 
 </body>
+
 </html>
