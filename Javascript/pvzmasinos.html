@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto su masyvu</title>
+    
+    
+    
+</head>
+<body>
+    
+    <table border="1">
+        <thead>
+        <tr>
+        <td>Data</td>
+        <td>Valst.Nr</td>
+        <td>Kelias(m)</td>
+        <td>Laikas(s)</td>
+        <td>Greitis(km/h)</td>
+        </tr>
+    </thead>
+    <tbody>
+       
+
+    </tbody>
+    
+    </table>
+    <script>
+        var autos = [
+            [2015, 'LRS123', 5000, 420],
+            [2016, 'ABC123', 2805, 210],
+            [2017, 'EZZ571', 4000, 360],
+            [2018, 'JHB687', 1345, 100]
+        ];
+
+
+        var tekstas = '';
+       
+
+        for( i = 0; i < autos.length;  i++ ) {
+            tekstas += '<tr>' + 
+            stulpelis(autos[i][0]) +
+            stulpelis(autos[i][1]) +
+            stulpelis(autos[i][2]) +
+            stulpelis(autos[i][3]) +
+            stulpelis(autos[i][2] / autos[i][3] * 3.6 ) + '</tr>';
+            }
+
+
+
+         document.querySelector('tbody').innerHTML = tekstas;
+        
+
+        function stulpelis(reiksme) {
+            var td = '<td>' + reiksme + '<td>';
+            return td;
+
+        }
+            
+        
+        
+        
+        
+       
+    </script>
+</body>
+</html>
