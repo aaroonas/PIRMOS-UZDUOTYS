@@ -37,48 +37,40 @@
         <tr>
         <td>Data</td>
         <td>Valst.Nr</td>
-        <td>Kelias</td>
-        <td>Laikas</td>
-        <td>Greitis</td>
+        <td>Kelias(m)</td>
+        <td>Laikas(s)</td>
+        <td>Greitis(km/h)</td>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-        </tr>
+       
     </tbody>
     
     </table>
     <script>
         var masina = [
-            [2015, 'LRS123', 5000, 420],
-            [2016, 'ABC123', 2805, 210],
-            [2017, 'EZZ571', 4000, 360],
-            [2018, 'JHB687', 1345, 100]
+            ['2015-12-10', 'LRS123', 5000, 420],
+            ['2016-11-10', 'ABC123', 2805, 210],
+            ['2017-10-09', 'EZZ571', 4000, 360],
+            ['2018-08-15', 'JHB687', 1345, 100]
         ]
-        var greitis = (masina[i][2] * 3.6) / masina[i][3] ;//greicio ciklas?
-        var data = masina[i][0];
-        var nr = masina[i][1];
-        var kelias = masina[i][2];
-        var laikas = masina[i][3];
         
+        var tekstas = '';
+       for( i = 0; i < masina.length;  i++ ) {
+           tekstas += '<tr>' + 
+           '<td>' + masina[i][0] + '</td>' +
+           '<td>' + masina[i][1] + '</td>' +
+           '<td>' + masina[i][2] + '</td>' +
+           '<td>' + masina[i][3] + '</td>' +
+           '<td>' + (masina[i][2] / masina[i][3] * 3.6).toFixed(1) + '</td>' +
+                           '</tr>';}
 
-        var i;
-        var j;
-        masina = masina.push( greitis );
 
-        for( i = 0; i < masina.length;  i++ ) {
 
-            
-            document.querySelector("tbody > tr").innerHTML = '<td>' + masina[i] + '<td>';//kaip apsirasyt greiti(ar ipusint i masyva)?
-            
-        }
-            
+        document.querySelector('tbody').innerHTML = tekstas;
+       
+
+
         
         
         
