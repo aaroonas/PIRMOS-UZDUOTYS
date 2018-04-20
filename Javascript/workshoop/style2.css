@@ -1,0 +1,24 @@
+body {
+    padding: 50px;
+    padding-bottom: 0;
+    background-color: #c8cfcd;
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    background-color: #fff;
+    padding-bottom: 150px;
+}
+header nav {
+    padding: 20px 29px 78px 20px;
+    color: #333333;
+    overflow:auto;
+}
+header nav .leftSide {
+    float:left;
+}
+header nav .rrightSide {
+    float: right;
+}
+clearfix {
+    clear: both;
+}
