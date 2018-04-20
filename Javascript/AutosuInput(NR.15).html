@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,7 @@
             width: 80vw;
             margin: auto;
             border: 3px solid black;
-            
+
         }
 
         thead tr td {
@@ -26,103 +27,110 @@
             background-color: rgb(185, 50, 50);
             color: white;
         }
-        .ivedimas { 
-            height:20vh;
+
+        .ivedimas {
+            height: 20vh;
             width: 80vw;
-            text-align: center;}
-            
-        input  {
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 2px;
-    box-sizing: border-box;
+            text-align: center;
         }
-        button{
+
+        input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        button {
             padding: 10px;
         }
 
-        h1{text-align: center;}
-
-        
+        h1 {
+            text-align: center;
+        }
     </style>
 
-    
-    
 </head>
+
 <body>
-    <h1><b>Automobiliukų duomenys<b></h1>
-    
-    
+    <h1>
+        <b>Automobiliukų duomenys
+            <b>
+    </h1>
+
+
     <div>
-    <table>
-        <thead>
-        <tr>
-        <td>Data</td>
-        <td>Valst.Nr</td>
-        <td>Kelias(m)</td>
-        <td>Laikas(s)</td>
-        <td>Greitis(km/h)</td>
-        </tr>
-        <tr>
-            <td><input id="data" type="text"  placeholder="įveskite datą yyyy-mm-dd"></td>
-            <td><input id="nr" type="text" placeholder="įveskite valst.numerį"></td>
-            <td><input id="kelias" type="number" min="0" placeholder="įveskite kelią metrais"></td>
-            <td><input id="laikas" type="number" min="0" placeholder="įveskite laiką sekundėmis"></td>
-            <td><button onclick="addElement()">Sužinok greitį</button></td>
-            
-            
-        </tr>
-    </thead>
-    <tbody>
-       
-    </tbody>
-    
-    </table>
-
-    <script>
-        
-       
-        function addElement() {
+        <table>
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td>Valst.Nr</td>
+                    <td>Kelias(m)</td>
+                    <td>Laikas(s)</td>
+                    <td>Greitis(km/h)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="data" type="text" placeholder="įveskite datą yyyy-mm-dd">
+                    </td>
+                    <td>
+                        <input id="nr" type="text" placeholder="įveskite valst.numerį">
+                    </td>
+                    <td>
+                        <input id="kelias" type="number" min="0" placeholder="įveskite kelią metrais">
+                    </td>
+                    <td>
+                        <input id="laikas" type="number" min="0" placeholder="įveskite laiką sekundėmis">
+                    </td>
+                    <td>
+                        <button onclick="addElement()">Sužinok greitį</button>
+                    </td>
 
 
-             var masina = [] ;
-             
-            var data = document.getElementById("data").value;
-            var nr = document.getElementById("nr").value;
-            var kelias = document.getElementById("kelias").value;
-            var laikas = document.getElementById("laikas").value;
-           
-     
-            masina.push([data, nr, kelias, laikas]);
-            
-            
-           
-            tekstas = '  '
-    for( i = 0; i < masina.length;  i++ ) {      
-          tekstas += '<tr>' + 
-           '<td>' + masina[i][0] + '</td>' +
-           '<td>' + masina[i][1] + '</td>' +
-           '<td>' + masina[i][2] + '</td>' +
-           '<td>' + masina[i][3] + '</td>' +
-           '<td>' + (masina[i][2] / masina[i][3] * 3.6).toFixed(1) + '</td>' +
-                           '</tr>';}
-        
-
-document.querySelector('tbody').innerHTML += tekstas;
-disp();}
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <script>
 
 
- 
+            function addElement() {
 
 
+                var masina = [];
 
-       
+                var data = document.getElementById("data").value;
+                var nr = document.getElementById("nr").value;
+                var kelias = document.getElementById("kelias").value;
+                var laikas = document.getElementById("laikas").value;
+                document.getElementById("data").value = '';
+                document.getElementById("nr").value = '';
+                document.getElementById("kelias").value = '';
+                document.getElementById("laikas").value = '';
 
-        
-        
-        
-        
-       
-    </script>
+                masina.push([data, nr, kelias, laikas]);
+                disp();
+
+
+                function disp() {
+                    var tekstas = ' ';
+                    for (i = 0; i < masina.length; i++) {
+                        tekstas += '<tr>' +
+                            '<td>' + masina[i][0] + '</td>' +
+                            '<td>' + masina[i][1] + '</td>' +
+                            '<td>' + masina[i][2] + '</td>' +
+                            '<td>' + masina[i][3] + '</td>' +
+                            '<td>' + (masina[i][2] / masina[i][3] * 3.6).toFixed(1) + '</td>' +
+                            '</tr>';
+                    }
+
+
+                    document.querySelector('tbody').innerHTML += tekstas;
+                }
+                ;
+            }
+        </script>
 </body>
+
 </html>
