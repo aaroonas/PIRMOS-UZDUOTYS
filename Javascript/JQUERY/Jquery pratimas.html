@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQUERY PRATIMUKAS</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .wrap {
+            position:relative;
+        }
+
+        .red,
+        .green,
+        .blue {
+            width: 200px;
+            height: 200px;
+            font-size: 3em;
+            border: 10px solid;
+            border-radius: 50%;
+            }
+            .green {
+            background-color: rgb(0, 128, 0, 0.5);
+            border-color: green;
+            }
+            .blue {
+            background-color: rgb(0, 0, 128, 0.5);
+            border-color:blue}
+            .red {
+            background-color: rgb(128, 0, 0, 0.5);
+            border-color: red;
+            }
+        </style>
+
+    <script>
+        $(document).ready(function () {
+            $("a").hover(function () {
+                $("p").toggle();        // hide(); /remove(); /(toggle()- grazina atgal po veiksmo; toggleClass()- 'togglina su klase' )
+            });
+        });
+       
+        $(document).ready(function(){  //ar gerai kartoti $(document).ready(function(){}, arr su tuo $(document).ready(function(){} uzkrauna visas funkcijas?
+  $(".red").click(function(){
+    $(".green, .blue").hide(2000)
+  })
+});
+$(document).ready(function(){
+        $(".red").dblclick(function(){  //ar eina grazinti borderius tarkim naikinant click animation height, width, border:0, dblclick grazinant parametrus(juk animuoja tik skaitines vertes)
+    $(".green, .blue").show(2000)
+  })
+});
+
+$(document).ready(function(){
+  $(".blue").click(function(){
+    $(".red, .green ").hide(2000)
+  })
+});
+$(document).ready(function(){
+        $(".blue").dblclick(function(){
+    $(".red, .green").show(2000)
+  })
+});
+$(document).ready(function(){
+  $(".green").click(function(){
+    $(".red, .blue").hide(2000)
+  })
+});
+$(document).ready(function(){
+        $(".green").dblclick(function(){
+    $(".red, .blue").show(2000)
+  })
+});          
+            
+        
+    </script>
+</head>
+
+<body>
+
+ <a href="#">Slėpti</a>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore perferendis sint illo alias animi possimus.
+        Ipsa, fugiat veniam dignissimos magni repudiandae eaque, sint sunt odio labore, debitis atque nesciunt? Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Aliquam tempore perferendis sint illo alias animi possimus. Ipsa, fugiat
+        veniam dignissimos magni repudiandae eaque, sint sunt odio labore, debitis atque nesciunt? Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Aliquam tempore perferendis sint illo alias animi possimus. Ipsa, fugiat veniam
+        dignissimos magni repudiandae eaque, sint sunt odio labore, debitis atque nesciunt? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Aliquam tempore perferendis sint illo alias animi possimus. Ipsa, fugiat veniam dignissimos magni
+        repudiandae eaque, sint sunt odio labore, debitis atque nesciunt? </p>
+<div class="wrap">
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+</div>
+</body>
+
+</html>
