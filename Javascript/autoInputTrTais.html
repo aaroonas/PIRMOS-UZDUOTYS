@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto su Input</title>
+    <style>
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+
+        table {
+            height: 20vh;
+            width: 80vw;
+            margin: auto;
+            border: 3px solid black;
+
+        }
+
+        thead tr td {
+            font-weight: bold;
+            background-color: rgb(185, 50, 50);
+            color: white;
+        }
+
+        .ivedimas {
+            height: 20vh;
+            width: 80vw;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>
+        <b>Automobiliukų duomenys
+            <b>
+    </h1>
+
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td>Valst.Nr</td>
+                    <td>Kelias(m)</td>
+                    <td>Laikas(s)</td>
+                    <td>Greitis(km/h)</td>
+                    <td>Veiksmas</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="data" type="text" placeholder="įveskite datą yyyy-mm-dd">
+                    </td>
+                    <td>
+                        <input id="nr" type="text" placeholder="įveskite valst.numerį">
+                    </td>
+                    <td>
+                        <input id="kelias" type="number" min="0" placeholder="įveskite kelią metrais">
+                    </td>
+                    <td>
+                        <input id="laikas" type="number" min="0" placeholder="įveskite laiką sekundėmis">
+                    </td>
+                    <td>
+                        <button onclick="add()">Sužinok greitį</button>
+                    </td>
+                    <td>
+
+                    </td>
+
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <script>
+
+            var masina = [];
+
+            function add(){
+
+             var data = document.getElementById("data").value;
+                var nr = document.getElementById("nr").value;
+                var kelias = document.getElementById("kelias").value;
+                var laikas = document.getElementById("laikas").value;
+                masina.push([data, nr, kelias, laikas]);
+                lentele();
+                document.getElementById("data").value = '';
+                document.getElementById("nr").value = '';
+                document.getElementById("kelias").value = '';
+                document.getElementById("laikas").value = '';
+
+             
+            }
+
+            function lentele() {
+               
+                    var lentele = ' ';
+                    for (i = 0; i < masina.length; i++) {
+                        lentele += '<tr>' +
+                            '<td>' + masina[i][0] + '</td>' +
+                            '<td>' + masina[i][1] + '</td>' +
+                            '<td>' + masina[i][2] + '</td>' +
+                            '<td>' + masina[i][3] + '</td>' +
+                            '<td>' + (masina[i][2] / masina[i][3] * 3.6).toFixed(1) + '</td>' +
+                            '<td><button onclick="trinti(' + i + ')">Trinti</button></td>'
+                    '</tr>';
+            };
+            document.querySelector('tbody').innerHTML = lentele;
+            }
+
+
+                   
+                function trinti(index) {
+                    masina.splice(index, 1);
+                    lentele() 
+                }
+
+               
+                
+            
+        </script>
+</body>
+
+</html>
