@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title> 
+    <title>kvadratas i burbula</title> 
     <style>
-         #square {
+        .square {
             background-color: red;
             width: 500px;
             height: 500px;
             margin: auto;
+            transition:all 1s;
+            
            }
-        #square{
+        .square2{
             border-radius: 50%;
             height: 500px;
             width: 500px;
-            transition: all 1s ease-in-out;
-            background-color: green;
+           background-color: green;
+           margin: auto;
+           transition: all 1s;
 }
         
     </style>   
-    <script>
-        
-    </script>
-        
+    
 </head>
 <body>
-    <div id="square" onclick="keitimas()"></div>
+    <div id="divas" class="square"></div>
     
-       
+    <script>
+            document.getElementById("divas").onclick = function() {
+                this.classList.toggle('square2')
+            }
+           
+         </script>
+             
 </body>
 </html>
