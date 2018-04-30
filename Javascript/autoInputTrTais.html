@@ -128,17 +128,20 @@
                             '<td>' + (masina[i][2] / masina[i][3] * 3.6).toFixed(1) + '</td>' +
                             '<td><button onclick="trinti(' + i + ')">Trinti</button></td>'
                     '</tr>';
-            };
-            document.querySelector('tbody').innerHTML = lentele;
-            }
-
-
                    
-                function trinti(index) {
+            }
+            
+            document.querySelector('tbody').innerHTML = lentele;
+            
+            }
+            function trinti(index) {
                     masina.splice(index, 1);
                     lentele() 
                 }
-
+                masina[i].addItemListener("click", editItem)
+               function editItem() {
+                   this.querySelector("tbody>td")
+}
                
                 
             
