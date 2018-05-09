@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slaptažodžio keitimo forma su PHP</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+        i {
+            font-size: 20px;
+        }
+
+        button {
+            background-color: #20bf6b;
+            color: #fff;
+            padding: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .animation {
+            display: inline-block;
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 20px;
+            height: 20px;
+            -webkit-animation: spin 1s linear infinite;
+            /* Safari */
+            animation: spin 1s linear infinite;
+        }
+
+        /* Safari */
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        strong {
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+            <h1>Pasikeiskit pagaliau slaptažodį:)</h1>
+                
+        <form action="slaptaz_keitimo.php" method="post">
+                    
+                    <input type="password" placeholder="įveskite slaptažodį" name="psw" required>
+                    <br>
+                    <input type="password" placeholder="pakartokite slaptažodį" name="pswRep" required>
+                    <br>
+                    <!--<button type= "submit"><b>KEISTI SLAPTAŽODĮ:)</b></button> cia butu mygtukas JSON variantui-->
+        </form>
+        <br>
+     
+
+
+    <button onclick="ajaxinis()">
+        <b>KEISTI SLAPTAŽODĮ:)</b>
+    </button>
+    </div>
+    <br>
+    <ats></ats>
+
+    <script>
+        function ajaxinis() {
+            $('ats').html('<div class= "animation"></div><span>Jungiamės....</span>');
+            $.post('slaptaz_keitimo.php', {
+                psw: $('input[name="psw"]').val(),
+                pswRep: $('input[name="pswRep"]').val()
+            }).done(function (ats) {
+                if (ats.success) {
+                    $('div').empty();
+                    $('ats').html('<strong>Slaptažodis pakeistas!</strong>');
+                } else {
+                    $('ats').html(ats.error)
+                }
+            });
+        }
+        
+    </script>
+
+</body>
+
+</html>
