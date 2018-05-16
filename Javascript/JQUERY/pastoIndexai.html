@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/6603c9fd94.js"></script>
+
+    <title>PASTO INDEXAI</title>
+</head>
+
+<body>
+    <h1>Adresų įvedimo laukai</h1>
+    <br>
+    
+        <input id="gatve" type="text" placeholder="gatve" >
+        <br><br>
+        <input id="nr" type="number" placeholder="namo nr" >
+        <br><br>
+        <input id="miestas" type="text" placeholder="miestas" >
+        <br><br>
+        <input id="savivaldybe" type="text" placeholder="savivaldybe" >
+        <br><br>
+        <button>ADRESAS</button>
+    
+    <p>čia printins adresus</p>
+    <br>
+    <script>
+        $(document).ready(function () {         //https://api.jquery.com/jquery.get/
+            $("button").click(function () {
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: "https://postit.lt/data/?address=" + $("#gatve").val() + $("#nr").val() + "," + $("#miestas").val() + $("#savivaldybe").val() + ".", // url -> input
+                    success: function (result) {
+                       
+                            
+                        $("p").html('<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span>Connecting...</span>'); //<-jei nenumatyta kazkokia salyga - suksis sitas
+                       if (result.success == false) {$("p").html(result.message)
+                       }else if (result.total == 0){
+                            $("p").html("<span> Adresų pagal paiešką nerasta </span>")
+                            } else if(result.total == 1){
+                        $("p").html(
+                                '<br>' + result.data[0].address + '<br>' +
+                                '<br>' + result.data[0].post_code + ' '+
+                                result.data[0].city + '<br>' +
+                                '<br>' + result.data[0].municipality + '<br>' +
+                                '<br>' + result.data[0].post + '<br>' +
+                                '<br>' + result.data[0].mailbox + '<br>'  
+                                )
+                                }else if(result.total >= 2){
+                                    $("p").html(
+                                    '<br>'+ '<span>Rasta rezultatų pagal paiešką:</span>'+ " " + result.total + '<br>' +
+                                '<span>Rodomas pirmasis iš jų. Patikslinkite paiešką</span>'+ '<br>' + 
+                                    '<br>' + result.data[0].address + '<br>' +
+                                '<br>' + result.data[0].post_code + ' '+
+                                result.data[0].city + '<br>' +
+                                '<br>' + result.data[0].municipality + '<br>' +
+                                '<br>' + result.data[0].post + '<br>' +
+                                '<br>' + result.data[0].mailbox + '<br>' )
+                                }("p").text(result.message)
+
+                                
+                        }
+                    });
+            });
+        });                           //Dadet cikla $.each ir mygtuku ar inputu suvaldyti pasirinkimu kieki jeigu result.total labai daug; prikabint, kad ieskotu pagal savivaldybe)
+
+
+    </script>
+</body>
+
+</html> 
