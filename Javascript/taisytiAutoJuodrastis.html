@@ -102,10 +102,7 @@
 
             function add(){
 
-             //var data = document.getElementById("data").value;
-               // var nr = document.getElementById("nr").value;
-               // var kelias = document.getElementById("kelias").value;
-                //var laikas = document.getElementById("laikas").value;
+             
                 masina.push({"data":document.getElementById("data").value, 
                 "nr":document.getElementById("nr").value, 
                 "kelias":document.getElementById("kelias").value, 
@@ -118,11 +115,8 @@
 
              
             }
-
             function lentele() {
-                
-                //var greitis = (masina[i][2] / masina[i][3]) = 0;
-                    var lentele = ' ';
+                var lentele = ' ';
                     for (i = 0; i < masina.length; i++) {
                         lentele += '<tr>' +
                             '<td>' + masina[i].data + '</td>' +
@@ -144,34 +138,34 @@
                     masina.splice(index, 1);
                     lentele() 
                 }
-                var a = masina[i];
+               
             function editinti(index) {
-                     var a = masina[i][index];                
+                                   
                // document.querySelector('tbody').contentEditable = true; //? kitu budu..
             
-            document.getElementById("data").value = a.data;
-            document.getElementById("nr").value = a.nr;
-            document.getElementById("kelias").value = a.kelias;
-            document.getElementById("laikas").value = a.laikas;
+            document.getElementById("data").value = masina[i][index].data;
+            document.getElementById("nr").value = masina[i][index].nr;
+            document.getElementById("kelias").value = masina[i][index].kelias;
+            document.getElementById("laikas").value = masina[i][index].laikas;
                }lentele();
               
                
              
-            //document.querySelector('tbody').innerHTML = masina[i][0];
+            
             function saveinti(index) {
-                var a = masina[index]
-            a.data = document.getElementById("data").value;
-            a.numeris = document.getElementById("nr").value;
-            a.atstumas = document.getElementById("kelias").value;
-            a.laikas = document.getElementById("laikas").value;
+                
+            masina[index].data = document.getElementById("data").value;
+            masina[index].nr = document.getElementById("nr").value;
+            masina[index].kelias = document.getElementById("kelias").value;
+            masina[index].laikas = document.getElementById("laikas").value;
             lentele(index);
             document.getElementById("data").value = '';
-                document.getElementById("nr").value = '';
-                document.getElementById("kelias").value = '';
-                document.getElementById("laikas").value = '';
+            document.getElementById("nr").value = '';
+            document.getElementById("kelias").value = '';
+            document.getElementById("laikas").value = '';
 
             }
-               
+            
                 
             
         </script>
