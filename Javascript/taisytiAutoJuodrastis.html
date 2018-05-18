@@ -44,6 +44,9 @@
         button {
             padding: 10px;
         }
+       /* #save{
+            display: none;
+        }*/
 
         h1 {
             text-align: center;
@@ -54,8 +57,7 @@
 
 <body>
     <h1>
-        <b>Automobiliukų duomenys
-            <b>
+        <b>Automobiliukų duomenys<b>
     </h1>
 
 
@@ -84,7 +86,7 @@
                         <input id="laikas" type="number" min="0" placeholder="įveskite laiką sekundėmis">
                     </td>
                     <td>
-                        <button onclick="add()">Sužinok greitį</button>
+                        <button id= "add" onclick="addinti()">Sužinok greitį</button>
                     </td>
                     <td>
 
@@ -100,73 +102,77 @@
 
             var masina = [];
 
-            function add(){
+            function addinti(){
 
              
                 masina.push({"data":document.getElementById("data").value, 
                 "nr":document.getElementById("nr").value, 
                 "kelias":document.getElementById("kelias").value, 
                 "laikas": document.getElementById("laikas").value});
-                lentele();
-                document.getElementById("data").value = '';
-                document.getElementById("nr").value = '';
-                document.getElementById("kelias").value = '';
-                document.getElementById("laikas").value = '';
-
+                
+                
+           
+            
+                document.getElementById("data").value = "";
+                document.getElementById("nr").value = "";
+                document.getElementById("kelias").value = "";
+                document.getElementById("laikas").value = "";
+                lentele(); 
+               // document.getElementById("save").style.display="none"
+                }
+            
              
-            }
+            
             function lentele() {
+               
                 var lentele = ' ';
                     for (i = 0; i < masina.length; i++) {
                         lentele += '<tr>' +
-                            '<td>' + masina[i].data + '</td>' +
+                            '<td>' + masina[i].data + '</td>' +         //"<input type='text' id='inData"+ i +"' value='"+masina[i].data+"'>"
                             '<td>' + masina[i].nr + '</td>' +
                             '<td>' + masina[i].kelias + '</td>' +
                             '<td>' + masina[i].laikas + '</td>' +
                             '<td>' + (masina[i].kelias / masina[i].laikas * 3.6).toFixed(1) + '</td>' +
-                            '<td><button onclick="editinti(' + i + ')">Taisyti</button><button onclick="saveinti(' + i + ')">Saugoti</button><button onclick="trinti(' + i + ')">Trinti</button></td>' 
+                            '<td><button id= "edit" onclick="editinti(' + i + ')">Taisyti</button><button id= "save" onclick="saveinti(' + i + ')">Saugoti</button><button onclick="trinti(' + i + ')">Trinti</button></td>' 
                             
                     '</tr>';
                     
-                    } document.querySelector('tbody').innerHTML = lentele;   
+                    } document.querySelector("tbody").innerHTML = lentele;   
             }
             
            
             
             
-            function trinti(index) {
+            function trinti(index,i) {
                     masina.splice(index, 1);
-                    lentele() 
+                    lentele();
+                   // document.getElementById("add").style.display="inline-bock";   // paspaudus "taisyti" ir nepaspaudus "saugoti", griztu pridejimo mygtukas
+                     
                 }
                
             function editinti(index) {
                                    
                // document.querySelector('tbody').contentEditable = true; //? kitu budu..
             
-            document.getElementById("data").value = masina[i][index].data;
+           document.getElementById("data").value = masina[i][index].data;
             document.getElementById("nr").value = masina[i][index].nr;
             document.getElementById("kelias").value = masina[i][index].kelias;
             document.getElementById("laikas").value = masina[i][index].laikas;
-               }lentele();
-              
-               
-             
-            
+           // document.getElementById("save").style.display = "inline-block";
+          // document.getElementById("add").style.display = "none" 
+
+            }
             function saveinti(index) {
                 
             masina[index].data = document.getElementById("data").value;
             masina[index].nr = document.getElementById("nr").value;
             masina[index].kelias = document.getElementById("kelias").value;
             masina[index].laikas = document.getElementById("laikas").value;
-            lentele(index);
-            document.getElementById("data").value = '';
-            document.getElementById("nr").value = '';
-            document.getElementById("kelias").value = '';
-            document.getElementById("laikas").value = '';
-
-            }
+            //document.getElementById("add").style.display = "inline-block";
+            lentele();
             
-                
+            }
+           
             
         </script>
 </body>
